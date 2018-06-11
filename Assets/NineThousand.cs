@@ -185,8 +185,8 @@ public class NineThousand : MonoBehaviour
                 var string2 = String.Join(", ", expectedSelection.Select(x => x.ToString()).ToArray()).Replace("0", "Ka").Replace("1", "Me").Replace("2", "Ha");
                 if (chosenSelection[selectionIndex] != expectedSelection[selectionIndex])
                 {
-                    Module.HandleStrike();
                     Debug.LogFormat("[Over 9000 #{0}]: Sequence [{1}] entered, sequence [{2}] expected", _moduleId, string1, string2);
+                    Module.HandleStrike();
                     selectionIndex = 0;
                     chosenSelection.Clear();
                 }
