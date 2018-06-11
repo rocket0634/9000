@@ -47,7 +47,10 @@ public class NineThousand : MonoBehaviour
         Me.OnInteract += delegate () { ButtonPress(1); return false; };
         Ha.OnInteract += delegate () { ButtonPress(2); return false; };
 
-        var sequenceReplace = String.Join(" ", expectedSelection.Select(x => x.ToString()).ToArray()).Replace("0", "Ka").Replace("1", "Me").Replace("2","Ha");
+        var sequenceReplace = String.Join(", ", screens.Select(x => x.sprite.name).ToArray());
+        Debug.LogFormat("[Over 9000 #{0}]: Chosen images: {1}", _moduleId, sequenceReplace);
+
+        sequenceReplace = String.Join(" ", expectedSelection.Select(x => x.ToString()).ToArray()).Replace("0", "Ka").Replace("1", "Me").Replace("2","Ha");
 
         if (expectedSelection[0] != 3) Debug.LogFormat("[Over 9000 #{0}]: Expected sequence: {1}", _moduleId, sequenceReplace);
         else Debug.LogFormat("[Over 9000 #{0}]: Expected Sequence: Any.", _moduleId);
