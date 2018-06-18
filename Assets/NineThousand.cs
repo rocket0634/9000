@@ -171,6 +171,8 @@ public class NineThousand : MonoBehaviour
     void ButtonPress(int i)
     {
         if (!isActive) return;
+        var k = new[] { Ka, Me, Ha };
+        k[i].AddInteractionPunch(.3f);
         if (expectedSelection[0] == 3)
         {
             if (!running) StartCoroutine(Timer());
